@@ -27,5 +27,13 @@ $(function() {
       var adjResponse = response.word;
       $('#adjective').text(adjResponse);
     })
+    $.get("http://localhost:3000/verb", function(response) {
+      var verbResponse = response.word;
+      $('#verb').text(verbResponse);
+    })
+    $.get("http://localhost:3000/noun", function(response) {
+      var nounResponse = response.word;
+      $('#noun').text(nounResponse);
+    })
   })
 });
