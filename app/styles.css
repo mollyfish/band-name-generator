@@ -1,21 +1,22 @@
-body {
+#generator {
   font-family: Helvetica, sans-serif;
   font-size: 1em;
   margin: 1em auto;
   text-align: center;
   width: 55%;
-  height: 250px;
+  height: 280px;
   border: 3px solid #ddd;
   border-radius: 30px;
 }
 h1 {
   color: blue;
+  font-size: 200%;
 }
 button {
   width: 40%;
   height: 50px;
   color: blue;
-  font-size: 150%;
+  font-size: 160%;
   border: 1px solid blue;
   border-radius: 15px;
   background-color: #efefef;
