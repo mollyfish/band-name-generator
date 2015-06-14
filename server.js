@@ -3,6 +3,7 @@
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
+var number;
 
 app.use(express.static(__dirname + '/app/'));
 
@@ -29,23 +30,32 @@ var Noun = function() {
   this.Typewriters = true;
   this.Tigers = true;
   this.Walnuts = true;
-  this.Alaskans = true;
+  this.Canoes = true;
 }
 var noun = new Noun();
 
-var Picture = function() {
-  this.chairs = '';
-  this.typewriters = '';
-  this.tigers = '';
-  this.walnuts = '';
-  this.alaskans = '';
-}
+// var Picture = function() {
+//   this.chairs = true;
+//   this.typewriters = true;
+//   this.tigers = true;
+//   this.walnuts = true;
+//   this.canoes = true;
+// }
+// var pictureSource = new Picture();
 
 function getRandomWord(object) {
   var propArray = Object.keys(object);
-  var randomProp = propArray[Math.floor(Math.random() * propArray.length)];
+  number = Math.floor(Math.random() * propArray.length);
+  var randomProp = propArray[number];
   return {word: randomProp};
 }
+
+// function getMatchingPicture(object) {
+//   var picArray = Object.keys(object);
+//   var nounPic = picArray[number];
+//   // console.log(nounPic);
+//   return {picture: nounPic};
+// }
 
 /*FROM F2*/
 app.get('/', function(req, res) {
@@ -63,6 +73,10 @@ app.get('/verb', function(req, res) {
 app.get('/noun', function(req, res) {
   res.json(getRandomWord(noun));
 });
+
+// app.get('/picture', function(req, res) {
+//   res.json(getMatchingPicture(pictureSource));
+// });
 
 app.get('/*', function(req, res) {
   res.status(404).sendFile(__dirname + '/app/404.html');

@@ -2,7 +2,7 @@
 
 $(function() {
 
-  
+
 
   // var selected;
   // var str0 = [1,2,3];
@@ -33,7 +33,28 @@ $(function() {
     })
     $.get("http://localhost:3000/noun", function(response) {
       var nounResponse = response.word;
+      console.log(nounResponse);
       $('#noun').text(nounResponse);
+      if (nounResponse == "Chairs") {
+        $('#noun-pic').attr("src", "images/chair.png");
+      } else if (nounResponse == "Typewriters") {
+        $('#noun-pic').attr("src", "images/typewriter.png");
+      } else if (nounResponse == "Tigers") {
+        $('#noun-pic').attr("src", "images/tiger.png");
+      } else if (nounResponse == "Walnuts") {
+        $('#noun-pic').attr("src", "images/walnuts.png");
+      } else if (nounResponse == "Canoes") {
+        $('#noun-pic').attr("src", "images/canoes.png");
+      } else {
+        $('#noun-pic').attr("src", "error");
+      }
+
+
     })
+    // $.get("http://localhost:3000/picture", function(response) {
+    //   var picResponse = response.picture;
+    //   // console.log(picResponse);
+      
+    // })
   })
 });
