@@ -1,6 +1,13 @@
 'use strict';
 
 $(function() {
+
+function capitalize(string) {
+   return string.replace(/\w\S*/g, function(txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
   $('#pick-string').click( function() {
     $.get("http://localhost:3000/adjective", function(response) {
       var adjResponse = response.word;
@@ -14,7 +21,6 @@ $(function() {
 
     $.get("http://localhost:3000/noun", function(response) {
       var nounResponse = response.word;
-      console.log(nounResponse);
       $('#noun').text(nounResponse);
       if (nounResponse == "Chairs") {
         $('#noun-pic').attr("src", "images/chair.png");
@@ -27,7 +33,7 @@ $(function() {
       } else if (nounResponse == "Canoes") {
         $('#noun-pic').attr("src", "images/canoes.png");
       } else {
-        $('#noun-pic').attr("src", "error");
+        $('#noun-pic').attr("src", "images/notes.png");
       }
     })
   })
@@ -35,17 +41,16 @@ $(function() {
     $("#submitWords").on("submit", function(e) {
         e.preventDefault();
         
-        var adjective = $("[name=adjective]").val();
+        var adjective = capitalize($("[name=adjective]").val());
         var adjPost;
-        var verb = $("[name=verb]").val();
+        var verb = capitalize($("[name=verb]").val());
         var verbPost;
-        var noun = $("[name=noun]").val();
+        var noun = capitalize($("[name=noun]").val());
         var nounPost;
 
         if (adjective) {
           adjPost = {word: adjective};
           $.post("adjective", adjPost, function(response) {
-            console.log('response');
             var adjectiveRes = response.msg;
             $("#adjRes").text(adjectiveRes);
           })
@@ -53,7 +58,6 @@ $(function() {
         if (verb) {
           verbPost = {word: verb};
           $.post("verb", verbPost, function(response) {
-            console.log('response');
             var verbRes = response.msg;
             $("#verbRes").text(verbRes);
           })
@@ -61,10 +65,12 @@ $(function() {
         if (noun) {
           nounPost = {word: noun};
           $.post("noun", nounPost, function(response) {
-            console.log('response');
             var nounRes = response.msg;
             $("#nounRes").text(nounRes);
           })
         }
+        $("[name=adjective]").val("");
+        $("[name=verb]").val("");
+        $("[name=noun]").val("");
     });
 });
