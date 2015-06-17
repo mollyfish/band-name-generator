@@ -34,6 +34,9 @@ function capitalize(string) {
         $('#noun-pic').attr("src", "images/notes.png");
       }
     })
+    $("#adjRes").text("");
+    $("#verbRes").text("");
+    $("#nounRes").text("");
   })
 
   $("#submitWords").on("submit", function(e) {
