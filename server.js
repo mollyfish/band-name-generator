@@ -45,6 +45,18 @@ app.post('/adjective', function(req, res) {
   res.json(word);
 });
 
+app.post('/verb', function(req, res) {
+  var word = postRandomWord(req.body.word, verb); 
+  console.log(req.body);
+  res.json(word);
+});
+
+app.post('/noun', function(req, res) {
+  var word = postRandomWord(req.body.word, noun); 
+  console.log(req.body);
+  res.json(word);
+});
+
 app.listen(port, function() {
   console.log('Server is running on port ' + port + '.  Woot!');
 });

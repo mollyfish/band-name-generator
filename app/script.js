@@ -37,6 +37,10 @@ $(function() {
         
         var adjective = $("[name=adjective]").val();
         var adjPost;
+        var verb = $("[name=verb]").val();
+        var verbPost;
+        var noun = $("[name=noun]").val();
+        var nounPost;
 
         if (adjective) {
           adjPost = {word: adjective};
@@ -44,7 +48,23 @@ $(function() {
             console.log('response');
             var adjectiveRes = response.msg;
             $("#adjRes").text(adjectiveRes);
-        })
-      }
+          })
+        }
+        if (verb) {
+          verbPost = {word: verb};
+          $.post("verb", verbPost, function(response) {
+            console.log('response');
+            var verbRes = response.msg;
+            $("#verbRes").text(verbRes);
+          })
+        }
+        if (noun) {
+          nounPost = {word: noun};
+          $.post("noun", nounPost, function(response) {
+            console.log('response');
+            var nounRes = response.msg;
+            $("#nounRes").text(nounRes);
+          })
+        }
     });
 });
