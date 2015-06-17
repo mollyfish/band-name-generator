@@ -47,6 +47,9 @@ function capitalize(string) {
     var verbPost;
     var noun = capitalize($("[name=noun]").val());
     var nounPost;
+    $("#adjRes").text("");
+    $("#verbRes").text("");
+    $("#nounRes").text("");
       if (adjective) {
         adjPost = {word: adjective};
         $.post("adjective", adjPost, function(response) {
