@@ -9,17 +9,17 @@ function capitalize(string) {
 }
 
   $('#pick-string').click( function() {
-    $.get("http://localhost:3000/adjective", function(response) {
+    $.get("https://localhost:3000/adjective", function(response) {
       var adjResponse = response.word;
       $('#adjective').text(adjResponse);
     })
 
-    $.get("http://localhost:3000/verb", function(response) {
+    $.get("https://localhost:3000/verb", function(response) {
       var verbResponse = response.word;
       $('#verb').text(verbResponse);
     })
 
-    $.get("http://localhost:3000/noun", function(response) {
+    $.get("https://localhost:3000/noun", function(response) {
       var nounResponse = response.word;
       $('#noun').text(nounResponse);
       if (nounResponse == "Chairs") {
