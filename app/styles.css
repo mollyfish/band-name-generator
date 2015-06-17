@@ -32,6 +32,11 @@ button:hover {
   border-color: red;
   cursor: pointer;
 }
+form button {
+  width: 150px;
+  height: 30px;
+  font-size: 1em;
+}
 p {
   color: blue;
   font-size: 120%;
@@ -39,4 +44,11 @@ p {
 span {
   color: red;
   font-size: 140%;
+}
+form {
+  width: 55%;
+  margin: 0 auto 20px auto;
+}
+fieldset {
+  border-radius: 10px;
 }
