@@ -78,8 +78,14 @@ function capitalize(string) {
   });
 
   $('#save-name').click( function() {
-    console.log($("#favorites"));
     $("#favorites").removeClass("hidden");
     $("#fav-list").append("<li>" + $("#adjective").text() + " " + $("#verb").text() + " " + $("#noun").text() + "</li>");
   });
+
+  $("#pick-lead").click( function() {
+    $.get("/guitarist", function(response) {
+      var guitResponse = response.word;
+      $('#lead-guitar').text(guitResponse);
+    })
+  })
 });

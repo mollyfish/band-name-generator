@@ -8,12 +8,27 @@ body {
   float: right;
   padding-top: 3em;
 }
-#favorites {
-  width: 35%;padding-left: 1em;
+#guitarist {
+  width: 35%;
+  height: 180px;
+  padding-left: 1em;
   float: right;
   margin-right: 1em;
   border: 3px solid #ddd;
   border-radius: 30px;
+}
+#guitarist button {
+  margin-bottom: 10px;
+}
+#favorites {
+  width: 35%;
+  padding-left: 1em;
+  float: right;
+  margin-right: 1em;
+  margin-top: 2em;
+  border: 3px solid #ddd;
+  border-radius: 30px;
+  clear: right;
 }
 #generator { 
   padding: 1em;
@@ -67,6 +82,14 @@ button#save-name {
   font-size: 80%;
   border-radius: 5px;
   padding-top: 3px;
+}
+button#pick-lead {
+  width: 50%;
+  height: 25px;
+  font-size: 80%;
+  border-radius: 10px;
+  padding-top: 3px;
+  margin-top: 0;
 }
 form {
   width: 55%;

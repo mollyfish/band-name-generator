@@ -4,8 +4,10 @@ var express = require('express');
 var bodyparser = require('body-parser');
 var Adjective = require('./lib/adjective.js'); 
 var Verb = require('./lib/verb.js'); 
-var Noun = require('./lib/noun.js'); 
+var Noun = require('./lib/noun.js');
+var Guitarist = require('./lib/guitarist.js'); 
 var getRandomWord = require('./lib/getRandomWord.js');
+var getGuitarist = require('./lib/getGuitarist.js');
 var postRandomWord = require('./lib/postRandomWord.js');
 var app = express();
 var port = process.env.PORT || 3000;
@@ -13,6 +15,7 @@ var port = process.env.PORT || 3000;
 var adjective = new Adjective();
 var verb = new Verb();
 var noun = new Noun();
+var guitarist = new Guitarist();
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
@@ -33,6 +36,10 @@ app.get('/verb', function(req, res) {
 
 app.get('/noun', function(req, res) {
   res.json(getRandomWord(noun));
+});
+
+app.get('/guitarist', function(req, res) {
+  res.json(getGuitarist(guitarist));
 });
 
 app.get('/*', function(req, res) {
