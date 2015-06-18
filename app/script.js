@@ -20,20 +20,21 @@ function capitalize(string) {
     $.get("/noun", function(response) {
       var nounResponse = response.word;
       $('#noun').text(nounResponse);
-      if (nounResponse == "Chairs") {
-        $('#noun-pic').attr("src", "images/chair.png");
-      } else if (nounResponse == "Typewriters") {
-        $('#noun-pic').attr("src", "images/typewriter.png");
-      } else if (nounResponse == "Tigers") {
-        $('#noun-pic').attr("src", "images/tiger.png");
-      } else if (nounResponse == "Walnuts") {
-        $('#noun-pic').attr("src", "images/walnuts.png");
-      } else if (nounResponse == "Canoes") {
-        $('#noun-pic').attr("src", "images/canoes.png");
-      } else {
-        $('#noun-pic').attr("src", "images/notes.png");
-      }
+      // if (nounResponse == "Chairs") {
+      //   $('#noun-pic').attr("src", "images/chair.png");
+      // } else if (nounResponse == "Typewriters") {
+      //   $('#noun-pic').attr("src", "images/typewriter.png");
+      // } else if (nounResponse == "Tigers") {
+      //   $('#noun-pic').attr("src", "images/tiger.png");
+      // } else if (nounResponse == "Walnuts") {
+      //   $('#noun-pic').attr("src", "images/walnuts.png");
+      // } else if (nounResponse == "Canoes") {
+      //   $('#noun-pic').attr("src", "images/canoes.png");
+      // } else {
+      //   $('#noun-pic').attr("src", "images/notes.png");
+      // }
     })
+    $("#save-name").removeClass("hidden");
     $("#adjRes").text("");
     $("#verbRes").text("");
     $("#nounRes").text("");
@@ -74,5 +75,11 @@ function capitalize(string) {
     $("[name=adjective]").val("");
     $("[name=verb]").val("");
     $("[name=noun]").val("");
+  });
+
+  $('#save-name').click( function() {
+    console.log($("#favorites"));
+    $("#favorites").removeClass("hidden");
+    $("#fav-list").append("<li>" + $("#adjective").text() + " " + $("#verb").text() + " " + $("#noun").text() + "</li>");
   });
 });

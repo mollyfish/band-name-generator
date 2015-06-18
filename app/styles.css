@@ -8,18 +8,36 @@ body {
   float: right;
   padding-top: 3em;
 }
+#favorites {
+  width: 35%;padding-left: 1em;
+  float: right;
+  margin-right: 1em;
+  border: 3px solid #ddd;
+  border-radius: 30px;
+}
 #generator { 
   padding: 1em;
   text-align: center;
   width: 55%;
-  height: 210px;
+  height: 220px;
   border: 3px solid #ddd;
   border-radius: 30px;
+  position: relative;
 }
 h1 {
   color: blue;
   font-size: 200%;
   display: inline;
+}
+h2 {
+  color: blue;
+  font-size: 130%;
+}
+ul {
+  color: blue;
+}
+li {
+  color: red;
 }
 button {
   width: 40%;
@@ -35,6 +53,20 @@ button:hover {
   color: red;
   border-color: red;
   cursor: pointer;
+}
+button.hidden {
+  color: #ddd;
+  border-color: #ddd;
+}
+section.hidden {
+  display: none;
+}
+button#save-name {
+  width: 20%;
+  height: 25px;
+  font-size: 80%;
+  border-radius: 5px;
+  padding-top: 3px;
 }
 form {
   width: 55%;
@@ -63,8 +95,12 @@ legend {
 p {
   color: blue;
   font-size: 120%;
+  margin: .5em .3em;
 }
 span {
   color: red;
   font-size: 140%;
+}
+.hidethis {
+  display: none;
 }
