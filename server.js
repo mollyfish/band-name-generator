@@ -2,10 +2,10 @@
 
 var express = require('express');
 var bodyparser = require('body-parser');
-var Adjective = require('./lib/adjective.js'); 
-var Verb = require('./lib/verb.js'); 
+var Adjective = require('./lib/adjective.js');
+var Verb = require('./lib/verb.js');
 var Noun = require('./lib/noun.js');
-var Guitarist = require('./lib/guitarist.js'); 
+var Guitarist = require('./lib/guitarist.js');
 var getRandomWord = require('./lib/getRandomWord.js');
 var getGuitarist = require('./lib/getGuitarist.js');
 var postRandomWord = require('./lib/postRandomWord.js');
@@ -47,17 +47,17 @@ app.get('/*', function(req, res) {
 });
 
 app.post('/adjective', function(req, res) {
-  var word = postRandomWord(req.body.word, adjective); 
+  var word = postRandomWord(req.body.word, adjective);
   res.json(word);
 });
 
 app.post('/verb', function(req, res) {
-  var word = postRandomWord(req.body.word, verb); 
+  var word = postRandomWord(req.body.word, verb);
   res.json(word);
 });
 
 app.post('/noun', function(req, res) {
-  var word = postRandomWord(req.body.word, noun); 
+  var word = postRandomWord(req.body.word, noun);
   res.json(word);
 });
 
